@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/landing.css" >
+</head>
+<body>
+    <div class="summary-div">
+    <div class="heading">Analysis</div>
+    <div class="sub-heading">The following contains a brief summary of the uploaded contract, Points that may potentially be harmful for the person, Points that are beneficial for the person and Scope of improvement in the contract</div>
+    <textarea class="summary">
+      <!-- <p id="sumamry"></p> -->
+    </textarea>
+    <script>
+
+      let summary = `<%- summary %>`;
+      summary = summary.replace(/@/g, '\n');
+      document.getElementsByClassName('summary')[0].innerHTML = summary;
+      console.log(summary)
+
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:ital,wght@0,100;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Hedvig+Letters+Serif:opsz@12..24&family=Montserrat:ital,wght@0,100;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Courier+Prime&family=Hedvig+Letters+Serif:opsz@12..24&family=Montserrat:ital,wght@0,100;1,100&display=swap');
+
+body{
+    background-color: #444444;
+
+}
+.summary-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-right: 5%;
+    margin-left: 5%;
+    color: white;
+}
+
+.heading{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+.sub-heading{
+    text-align: center;
+    margin-top: 2rem;
+    top: 6rem;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 92%;
+}
+
+.summary{
+    margin-top: 3rem;
+    text-align: center;
+    background-color: #FFFDD0;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding:2.5rem 5rem;
+    font-size: 1.05rem; 
+    font-family: 'Courier Prime', monospace;
+    min-height: 65rem;
+    width: 60%;
+    resize: none;
+
+}
