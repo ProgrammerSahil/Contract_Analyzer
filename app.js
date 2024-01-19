@@ -1,16 +1,18 @@
 const express = require('express');
 const path = require('path');
+const test = require('dotenv').config();
 const app = express();
 const analyzeContract = require('./api/analyze.js');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 const fs = require('fs');
 const multer = require('multer');
 const tesseract = require('tesseract.js');
-
 app.use(express.json());
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+api_key = process.env.OPENAI_API_KEY;
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -34,8 +36,14 @@ app.get('/upload', (req, res) => {
 app.post('/result', upload.single('image'), async (req, res) => {
   try {
     const { data: { text } } = await tesseract.recognize(req.file.path, 'eng');
-    const summary = await analyzeContract(text);
+    const summary = await analyzeContract(text, api_key);
     res.redirect(`/displayResult?summary=${encodeURIComponent(summary)}`);
+    try {
+      fs.unlinkSync(req.file.path);
+      console.log('File deleted!');
+    } catch (err) {
+      console.error(err.message);
+    }
   } catch (error) {
     console.error('Error in analyzing contract:', error);
     res.status(500).json({ error: 'Error in analyzing contract' });
