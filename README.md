@@ -1,2 +1,2 @@
 # Contract_Analyzer
-Enter your own openAI API key in the analyze.js file in the api folder
+make a .env file in the root folder that contains the open ai api key
