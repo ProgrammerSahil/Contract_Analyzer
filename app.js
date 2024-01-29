@@ -32,7 +32,7 @@ app.get("/upload", (req, res) => {
   res.render("upload");
 });
 
-app.post("/result", upload.single("image"), async (req, res) => {
+app.post("/result", upload.single("image"), async (req, res) => { 
   try {
     const {
       data: { text },
@@ -41,7 +41,7 @@ app.post("/result", upload.single("image"), async (req, res) => {
     res.redirect(`/displayResult?summary=${encodeURIComponent(summary)}`);
     try {
       fs.unlinkSync(req.file.path);
-      console.log("File deleted!");
+      console.log("Uploaded file deleted for security purposes");
     } catch (err) {
       console.error(err.message);
     }
